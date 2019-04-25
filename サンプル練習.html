@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<style>
+		h2{font-size:24pt; color:#888;}
+		body{font-size:14pt}
+		button.buttonA{
+		font-size:1.3em;
+		font-weight:bold;
+		padding:10px 30px;
+		background-color:#248;
+		color:#fff;
+		-moz-border-radius:5px;
+		-webkit-border-radius:5px;
+		border-radius:5px;
+		}
+		button.buttonA:hover{
+		background-color:#24d;
+		color:#ff;
+		}
+		</style>
+	</head>
+	<body>
+		<h2>DOM追加サンプルHTML</h2>
+		<p id="msg"></p>
+		
+		<input type="text" id="txt1" size="40" maxlength="30">
+		
+		<button onclick="clickBtn();" class="buttonA">追加</button>
+		
+		<ul id="list"></ul>
+		<script>
+			function clickBtn(){
+				var txt=document.getElementById("txt1");
+				var msg=document.getElementById("msg");
+				var list=document.getElementById("list");
+				var li=document.createElement("li");
+				msg.textContent="【"+txt.value+"】を追加。";
+				list.appendChild(li);
+				li.textContent=txt.value;
+				txt.value="";
+			}
+		</script>
+	</body>
+</html>
